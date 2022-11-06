@@ -133,7 +133,7 @@ header {
 }
 
 .card {
-  animation: appear .9s forwards;
+  animation: appear .9s backwards;
 }
 
 @keyframes appear {
@@ -149,7 +149,8 @@ header {
 
 @media (min-width: 760px) {
   header {
-    animation: grow .5s forwards;
+    animation: grow .5s .2s backwards;
+    transform: scalex(2) scaleY(2);
     margin: 12.0rem 0 12.0rem;
   }
 
@@ -164,10 +165,12 @@ header {
 
 @keyframes grow {
   0% {
+    opacity: 0;
     transform: scalex(0) scaleY(2);
   }
 
   100% {
+    opacity: 1;
     transform: scalex(2) scaleY(2);
   }
 }
